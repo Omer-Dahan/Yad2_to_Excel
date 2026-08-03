@@ -1,4 +1,5 @@
-# Yad2 Car Exporter - תוסף כרום ליצוא מודעות רכב מיד2 ל-CSV
+# Yad2 Car Exporter 
+ תוסף כרום ליצוא מודעות רכב מיד2 ל-CSV
 
 ![באנר התוסף](extension/באנר.png)
 
