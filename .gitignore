@@ -5,6 +5,7 @@ SOFTWARE_OVERVIEW.md
 *.xlsx
 *.csv
 *.json
+!extension/manifest.json
 data/
 downloads/
 

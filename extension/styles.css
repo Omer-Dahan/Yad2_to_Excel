@@ -25,6 +25,27 @@
     gap: 8px !important;
 }
 
+/* Visibility is toggled from JS via classList, not inline style.display:
+   a plain inline style can never win over the !important rules above (a
+   stylesheet !important always beats a non-important inline style,
+   regardless of selector specificity), so hiding must also be !important.
+   The plain class covers non-button elements (e.g. the ETA line); the
+   compound selector guarantees it also wins on buttons regardless of
+   stylesheet source order (equal-specificity !important rules fall back
+   to source order, and ".yad2-exporter-btn.yad2-exporter-hidden" has
+   strictly higher specificity than ".yad2-exporter-btn" alone). */
+.yad2-exporter-hidden {
+    display: none !important;
+}
+.yad2-exporter-btn.yad2-exporter-hidden {
+    display: none !important;
+}
+
+.yad2-exporter-btn:disabled {
+    opacity: 0.6 !important;
+    cursor: not-allowed !important;
+}
+
 #yad2-export-current-btn {
     background-color: #ff6600 !important;
 }
@@ -45,15 +66,97 @@
     box-shadow: 0 8px 22px rgba(0, 136, 255, 0.5) !important;
 }
 
+#yad2-export-pause-btn {
+    background-color: #ffb400 !important;
+    color: #1e1e1e !important;
+}
+
+#yad2-export-pause-btn:hover {
+    transform: translateY(-2px) scale(1.04) !important;
+    background-color: #e6a200 !important;
+    box-shadow: 0 8px 22px rgba(255, 180, 0, 0.5) !important;
+}
+
 #yad2-export-stop-btn {
     background-color: #e63946 !important;
-    display: none !important; /* Hidden by default */
 }
 
 #yad2-export-stop-btn:hover {
     transform: translateY(-2px) scale(1.04) !important;
     background-color: #cc333f !important;
     box-shadow: 0 8px 22px rgba(230, 57, 70, 0.5) !important;
+}
+
+#yad2-exporter-eta {
+    background-color: rgba(30, 41, 59, 0.9) !important;
+    color: #ffffff !important;
+    font-size: 12px !important;
+    padding: 6px 14px !important;
+    border-radius: 20px !important;
+    text-align: center !important;
+    direction: rtl !important;
+}
+
+#yad2-exporter-info {
+    color: #f1f1f1 !important;
+    background-color: rgba(0, 0, 0, 0.45) !important;
+    font-size: 11px !important;
+    padding: 6px 12px !important;
+    border-radius: 10px !important;
+    text-align: center !important;
+    max-width: 220px !important;
+    line-height: 1.4 !important;
+    direction: rtl !important;
+}
+
+#yad2-exporter-recovery-modal {
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 10000000 !important;
+    background: rgba(0, 0, 0, 0.6) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    direction: rtl !important;
+    font-family: 'Segoe UI', Tahoma, Arial, sans-serif !important;
+}
+
+.yad2-exporter-modal-box {
+    background: #1e293b !important;
+    color: #ffffff !important;
+    padding: 24px !important;
+    border-radius: 16px !important;
+    max-width: 380px !important;
+    width: 90% !important;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5) !important;
+}
+
+.yad2-exporter-modal-box h3 {
+    margin: 0 0 12px 0 !important;
+    font-size: 18px !important;
+}
+
+.yad2-exporter-modal-box p {
+    margin: 0 0 18px 0 !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    color: #cbd5e1 !important;
+}
+
+.yad2-exporter-modal-btns {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+}
+
+.yad2-exporter-btn-secondary {
+    background-color: #475569 !important;
+    font-size: 13px !important;
+    padding: 8px 16px !important;
+}
+
+.yad2-exporter-btn-secondary:hover {
+    background-color: #334155 !important;
 }
 
 #yad2-exporter-toast {

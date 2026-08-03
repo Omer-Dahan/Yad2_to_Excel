@@ -1,3 +1,12 @@
+function isYad2Tab(url) {
+    try {
+        const hostname = new URL(url).hostname;
+        return hostname === 'www.yad2.co.il' || hostname === 'yad2.co.il';
+    } catch (e) {
+        return false;
+    }
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
     const maxPagesInput = document.getElementById('maxPages');
     const maxAdsInput = document.getElementById('maxAds');
@@ -23,7 +32,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Load current settings from active tab's localStorage
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-        if (!tabs[0] || !tabs[0].url.includes("yad2.co.il")) {
+        if (!tabs[0] || !isYad2Tab(tabs[0].url)) {
             statusDiv.textContent = "יש לפתוח בעמוד יד2";
             statusDiv.style.color = "#ff4757";
             return;
@@ -52,7 +61,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const maxAds = maxAdsInput.value;
 
         chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-            if (!tabs[0] || !tabs[0].url.includes("yad2.co.il")) {
+            if (!tabs[0] || !isYad2Tab(tabs[0].url)) {
                 statusDiv.textContent = "יש לשמור בעמוד יד2";
                 statusDiv.style.color = "#ff4757";
                 return;
