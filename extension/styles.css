@@ -1,0 +1,75 @@
+#yad2-exporter-panel {
+    position: fixed !important;
+    bottom: 25px !important;
+    left: 25px !important;
+    z-index: 999999 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    direction: rtl !important;
+    font-family: 'Segoe UI', Tahoma, Arial, sans-serif !important;
+}
+
+.yad2-exporter-btn {
+    padding: 12px 20px !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 50px !important;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25) !important;
+    font-size: 15px !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+    transition: all 0.25s ease !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+#yad2-export-current-btn {
+    background-color: #ff6600 !important;
+}
+
+#yad2-export-current-btn:hover {
+    transform: translateY(-2px) scale(1.04) !important;
+    background-color: #e65c00 !important;
+    box-shadow: 0 8px 22px rgba(255, 102, 0, 0.5) !important;
+}
+
+#yad2-export-multi-btn {
+    background-color: #0088ff !important;
+}
+
+#yad2-export-multi-btn:hover {
+    transform: translateY(-2px) scale(1.04) !important;
+    background-color: #0077e6 !important;
+    box-shadow: 0 8px 22px rgba(0, 136, 255, 0.5) !important;
+}
+
+#yad2-export-stop-btn {
+    background-color: #e63946 !important;
+    display: none !important; /* Hidden by default */
+}
+
+#yad2-export-stop-btn:hover {
+    transform: translateY(-2px) scale(1.04) !important;
+    background-color: #cc333f !important;
+    box-shadow: 0 8px 22px rgba(230, 57, 70, 0.5) !important;
+}
+
+#yad2-exporter-toast {
+    position: fixed !important;
+    top: 30px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    z-index: 9999999 !important;
+    background-color: #1e293b !important;
+    color: #ffffff !important;
+    padding: 14px 28px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4) !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    direction: rtl !important;
+    display: none;
+    border-right: 5px solid #ff6600 !important;
+}

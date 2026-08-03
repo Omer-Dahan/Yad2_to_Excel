@@ -1,0 +1,22 @@
+# Software overview document
+SOFTWARE_OVERVIEW.md
+
+# Output data & downloads
+*.xlsx
+*.csv
+*.json
+data/
+downloads/
+
+# Python & obsolete artifacts
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+chrome_user_data/
+
+# Environment / IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
